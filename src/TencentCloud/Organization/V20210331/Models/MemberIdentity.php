@@ -18,32 +18,36 @@ namespace TencentCloud\Organization\V20210331\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateOrganizationMember返回参数结构体
+ * 成员管理身份
  *
- * @method integer getUin() 获取成员Uin
+ * @method integer getIdentityId() 获取身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUin(integer $Uin) 设置成员Uin
+ * @method void setIdentityId(integer $IdentityId) 设置身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method string getIdentityAliasName() 获取身份名称。
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setIdentityAliasName(string $IdentityAliasName) 设置身份名称。
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class CreateOrganizationMemberResponse extends AbstractModel
+class MemberIdentity extends AbstractModel
 {
     /**
-     * @var integer 成员Uin
+     * @var integer 身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Uin;
+    public $IdentityId;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     */
-    public $RequestId;
-
-    /**
-     * @param integer $Uin 成员Uin
+     * @var string 身份名称。
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     */
+    public $IdentityAliasName;
+
+    /**
+     * @param integer $IdentityId 身份ID。
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $IdentityAliasName 身份名称。
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -58,12 +62,12 @@ class CreateOrganizationMemberResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Uin",$param) and $param["Uin"] !== null) {
-            $this->Uin = $param["Uin"];
+        if (array_key_exists("IdentityId",$param) and $param["IdentityId"] !== null) {
+            $this->IdentityId = $param["IdentityId"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("IdentityAliasName",$param) and $param["IdentityAliasName"] !== null) {
+            $this->IdentityAliasName = $param["IdentityAliasName"];
         }
     }
 }
