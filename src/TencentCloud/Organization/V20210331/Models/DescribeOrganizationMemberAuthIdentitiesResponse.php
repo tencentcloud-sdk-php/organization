@@ -18,24 +18,30 @@ namespace TencentCloud\Organization\V20210331\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeOrganizationMembers返回参数结构体
+ * DescribeOrganizationMemberAuthIdentities返回参数结构体
  *
- * @method array getItems() 获取成员列表。
- * @method void setItems(array $Items) 设置成员列表。
+ * @method array getItems() 获取列表。
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setItems(array $Items) 设置列表。
+注意：此字段可能返回 null，表示取不到有效值。
  * @method integer getTotal() 获取总数目。
+注意：此字段可能返回 null，表示取不到有效值。
  * @method void setTotal(integer $Total) 设置总数目。
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeOrganizationMembersResponse extends AbstractModel
+class DescribeOrganizationMemberAuthIdentitiesResponse extends AbstractModel
 {
     /**
-     * @var array 成员列表。
+     * @var array 列表。
+注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Items;
 
     /**
      * @var integer 总数目。
+注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Total;
 
@@ -45,8 +51,10 @@ class DescribeOrganizationMembersResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $Items 成员列表。
+     * @param array $Items 列表。
+注意：此字段可能返回 null，表示取不到有效值。
      * @param integer $Total 总数目。
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -65,7 +73,7 @@ class DescribeOrganizationMembersResponse extends AbstractModel
         if (array_key_exists("Items",$param) and $param["Items"] !== null) {
             $this->Items = [];
             foreach ($param["Items"] as $key => $value){
-                $obj = new OrgMember();
+                $obj = new OrgMemberAuthIdentity();
                 $obj->deserialize($value);
                 array_push($this->Items, $obj);
             }
